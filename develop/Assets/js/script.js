@@ -42,59 +42,94 @@
 //     }, 500)
 //     })
 
+var startButton = document.getElementById('start-btn')
+var questionContainerElement = document.getElementById('question-container')
+
+var currentQuestionIndex
+var questionElement = document.getElementById('question')
+var answerButtonsElement = document.getElementById('answer-buttons')
+
+startButton.addEventListener('click', startGame)
+
+function startGame() {
+    console.log("start")
+    startButton.classList.add('hide')
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
+}
+
+function setNextQuestion() {
+    showQuestion(currentQuestionIndex)
+}
+
+function showQuestion(question) {
+    questionElement.innerText = question.question
+}
+
+function selectAnswer() {
+
+}
+
+var questions = [
+    {
+        question: 'something?',
+        answers: [
+            { text: 'correct answer', correct: true},
+            { text: 'wrong answer', correct: false},
+        ]
+    }
+]
+
+
+//     var quizContainer = document.getElementById('quiz');
+//     var resultsContainer = document.getElementById('results');
+//     var submitButton = document.getElementById('submit');
+//     var startQuizButton = document.getElementById('startQuiz')
+//     var myQuestions = [ 
+//         {
+//             question: "something about javascript?",
+//             answers: {
+//                 a: "answer1",
+//                 b: "answer2",
+//                 c: "answer3"
+//             },
+//             correctAnswer: "b"
+//         },
+//         {
+//             question: "something else about javascript?",
+//             answers: {
+//                 a: "answer1",
+//                 b: "answer2",
+//                 c: "answer3"
+//             },
+//             correctAnswer: "c"
+//         },
+//         {
+//             question: "something else else about javascript?",
+//             answers: {
+//                 a: "answer1",
+//                 b: "answer2",
+//                 c: "answer3"
+//             },
+//             correctAnswer: "a"
+//         }
+//     ];
 
 
 
-
-
-    var quizContainer = document.getElementById('quiz');
-    var resultsContainer = document.getElementById('results');
-    var submitButton = document.getElementById('submit');
-    var startQuizButton = document.getElementById('startQuiz')
-    var myQuestions = [ 
-        {
-            question: "something about javascript?",
-            answers: {
-                a: "answer1",
-                b: "answer2",
-                c: "answer3"
-            },
-            correctAnswer: "b"
-        },
-        {
-            question: "something else about javascript?",
-            answers: {
-                a: "answer1",
-                b: "answer2",
-                c: "answer3"
-            },
-            correctAnswer: "c"
-        },
-        {
-            question: "something else else about javascript?",
-            answers: {
-                a: "answer1",
-                b: "answer2",
-                c: "answer3"
-            },
-            correctAnswer: "a"
-        }
-    ];
+// // Pagination
+// var previousButton = document.getElementById("previous");
+// var nextButton = document.getElementById("next");
+// var slides = document.querySelectorAll(".slide");
+// let currentSlide = 0;
 
 
 
-// Pagination
-var previousButton = document.getElementById("previous");
-var nextButton = document.getElementById("next");
-var slides = document.querySelectorAll(".slide");
-let currentSlide = 0;
-
-
-
-// Event listeners
-startQuizButton.addEventListener('click', startQuiz);
-// previousButton.addEventListener("click", showPreviousSlide);
-// nextButton.addEventListener("click", showNextSlide);
+// // Event listeners
+// startQuizButton.addEventListener('click', startQuiz);
+// // previousButton.addEventListener("click", showPreviousSlide);
+// // nextButton.addEventListener("click", showNextSlide);
 
 
 
@@ -106,29 +141,3 @@ startQuizButton.addEventListener('click', startQuiz);
 
 
 
-
-
-
-
-    // var questions = [
-    // var score = 0;
-        
-    // for(var i=0; i < questions.length; i++){
-    //     var response = window.prompt(questions[i].prompt)
-    //     if(response == questions[i].answer){
-    //         score++;
-    //         alert ("Correct!");
-    //     }   else {
-    //         alert ("Incorrect");
-    //     }
-    // }
-    // alert("you got " + score + "/" + questions.length);
-    // {
-    //         prompt: "Some question about javascript?\n(a) answer1\n\ (b) answer2\n(c) answer3",
-    //         answer; "a"
-    //     },
-    //     {
-    //         prompt: "Some other question about javascript?\n(a) answer1\n\ (b) answer2\n(c) answer3",
-    //         answer; "b"
-    //     },
-    // ]
