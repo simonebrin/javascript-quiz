@@ -10,22 +10,18 @@
 </head>
 <body>
     <header>
-        <h1 id="pageTitle">JavaScrip Quiz</h1>
-        <p>Click the button to start the quiz!</p>
+        <h1 id="pageTitle">JavaScript Quiz</h1>
+        <p id="startText">Click the button to start the quiz!</p>
         <button id="startQuiz" >Start Quiz!</button>
     </header>
     <div class="container"></div>
     <div id="question-container" class="hide"></div>
-    <div id="question">Question</div>
-    <div id="answer-buttons" class="btn-grid">
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3</button>
-        <button class="btn">Answer 4</button>
-    </div>
-    <div class="controls">
-        <button id="start-btn" class="start-btn btn">Start the quiz!</button>
-        <button id="next-btn" class="next-btn btn hide">Next</button>
+    <div id="question" class="hide">Question</div>
+    <div id="answer-buttons" class="btn-grid hide">
+        <button class="btn" id="q1">Answer 1</button>
+        <button class="btn" id="q2">Answer 2</button>
+        <button class="btn" id="q3">Answer 3</button>
+        <button class="btn" id="q4">Answer 4</button>
     </div>
     
 </body>

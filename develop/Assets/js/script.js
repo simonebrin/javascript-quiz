@@ -32,6 +32,7 @@ myButton.addEventListener('click', function() {
 
     var count = 10
     myH1.textContent = count
+    startGame()
     var myTimer = setInterval(function(){
         count--
         myH1.textContent = count
@@ -40,46 +41,92 @@ myButton.addEventListener('click', function() {
             myH1.textContent = 'Quiz ended'
         }
     }, 500)
-    })
+})
 
-var startButton = document.getElementById('start-btn')
 var questionContainerElement = document.getElementById('question-container')
 
 var currentQuestionIndex
 var questionElement = document.getElementById('question')
 var answerButtonsElement = document.getElementById('answer-buttons')
+var startTextElement = document.getElementById('startText')
+var q1 = document.getElementById('q1')
+var q2 = document.getElementById('q2')
+var q3 = document.getElementById('q3')
+var q4 = document.getElementById('q4')
 
-startButton.addEventListener('click', startGame)
 
 function startGame() {
     console.log("start")
-    startButton.classList.add('hide')
     currentQuestionIndex = 0
-    questionContainerElement.classList.remove('hide')
+    questionElement.classList.remove('hide')
+    answerButtonsElement.classList.remove('hide')
+    startTextElement.classList.add('hide')
+    myButton.classList.add('hide')
     setNextQuestion()
 }
 
+    var myQuestions = [ 
+        {
+            question: "something about javascript? 0",
+            answers: {
+                a: "answer1",
+                b: "answer2",
+                c: "answer3",
+                d: "answer4"
+
+            },
+            correctAnswer: "answer2"
+        },
+        {
+            question: "something else about javascript? 1",
+            answers: {
+                a: "answer1",
+                b: "answer2",
+                c: "answer3",
+                d: "answer4"
+            },
+            correctAnswer: "answer3"
+        },
+        {
+            question: "something else else about javascript? 2",
+            answers: {
+                a: "answer1",
+                b: "answer2",
+                c: "answer3",
+                d: "answer4"
+            },
+            correctAnswer: "answer1"
+        }
+    ];
 function setNextQuestion() {
-    showQuestion(currentQuestionIndex)
+    showQuiz(currentQuestionIndex)
 }
 
-function showQuestion(question) {
-    questionElement.innerText = question.question
+function showQuiz(i) {
+    questionElement.innerText = myQuestions[i].question
+    q1.innerText = myQuestions[i].answers.a
+    q2.innerText = myQuestions[i].answers.b
+    q3.innerText = myQuestions[i].answers.c
+    q4.innerText = myQuestions[i].answers.d
 }
 
-function selectAnswer() {
 
-}
+    answerButtonsElement.addEventListener('click', function(event) {
+        var element = event.target
+        if (element.matches('.btn')){
+            if (element.textContent === myQuestions[currentQuestionIndex].correctAnswer) {
+                console.log('great job')
+            }else{
+                console.log('wrong answer')
+            }
+            currentQuestionIndex++
+            showQuiz(currentQuestionIndex)
+        }
+    })
+// If you are at the last question end the quiz, showing a game over screen taking them to highscore page
+// if it was wrong answer, decrease the time
 
-var questions = [
-    {
-        question: 'something?',
-        answers: [
-            { text: 'correct answer', correct: true},
-            { text: 'wrong answer', correct: false},
-        ]
-    }
-]
+
 
 
 //     var quizContainer = document.getElementById('quiz');
