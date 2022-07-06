@@ -25,22 +25,22 @@
 // var buttonEl = document.querySelector("#start-quiz");
 // console.log(buttonEl);
 
-// var myH1 = document.querySelector('#pageTitle')
-// var myButton = document.getElementById('startQuiz')
+var myH1 = document.querySelector('#pageTitle')
+var myButton = document.getElementById('startQuiz')
 
-// myButton.addEventListener('click', function() {
+myButton.addEventListener('click', function() {
 
-//     var count = 10
-//     myH1.textContent = count
-//     var myTimer = setInterval(function(){
-//         count--
-//         myH1.textContent = count
-//         if (count === 0) {
-//             clearInterval(myTimer)
-//             myH1.textContent = 'Quiz ended'
-//         }
-//     }, 500)
-//     })
+    var count = 10
+    myH1.textContent = count
+    var myTimer = setInterval(function(){
+        count--
+        myH1.textContent = count
+        if (count === 0) {
+            clearInterval(myTimer)
+            myH1.textContent = 'Quiz ended'
+        }
+    }, 500)
+    })
 
 var startButton = document.getElementById('start-btn')
 var questionContainerElement = document.getElementById('question-container')
