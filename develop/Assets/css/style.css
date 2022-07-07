@@ -1,23 +1,11 @@
  * {
-    /* box-sizing: border-box; */
     font-family: itc-avant-garde-gothic-pro,sans-serif;
     font-weight: 550;
     font-style: normal;
 }
 
-/* :root
-
-body {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:100vw;
-    height: 100vh;
-}  */
 button:hover {
-    background-color: green;
+    background-color: navy;
   }
 
 .btn-grid {
@@ -29,26 +17,13 @@ button:hover {
 
 .btn, #startQuiz {
     border: 2px solid rgb(221, 0, 255);
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     background-color: black;
     color: white;
     
 }
 
-.btn.correct {
-    color:greenyellow
-}
-
-.btn.wrong {
-    color:crimson
-}
-
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .hide {
     display: none;
