@@ -31,7 +31,7 @@ var scores = document.getElementById('scores')
 
 myButton.addEventListener('click', function() {
 
-    var count = 10
+    var count = 100
     myH1.textContent = count
     startGame()
     scores.classList.remove('hide')
@@ -42,7 +42,7 @@ myButton.addEventListener('click', function() {
             clearInterval(myTimer)
             myH1.textContent = 'Quiz ended'
         }
-    }, 500)
+    }, 1000)
 })
 
 var questionContainerElement = document.getElementById('question-container')
@@ -150,7 +150,7 @@ function showQuiz(i) {
             if (element.textContent === myQuestions[currentQuestionIndex].correctAnswer) {
                 score++
                 // var score = document.getElementsByClassName("score");
-                scores.innerText = score;
+                // scores.innerText = score;
                 classToApply = 'correct'
                 console.log(score)
             }else{
@@ -170,7 +170,7 @@ function showQuiz(i) {
     function endQuiz(){
 
         var scores = document.getElementById('scores')
-        scores.textContent = "You scored " + score
+        scores.textContent = "You scored " + score + "/5, congrats!"
         questionElement.classList.add('hide')
         answerButtonsElement.classList.add('hide')
     }
