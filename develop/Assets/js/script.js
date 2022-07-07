@@ -67,36 +67,66 @@ function startGame() {
 
     var myQuestions = [ 
         {
-            question: "something about javascript? 0",
+            question: "Which one of these is NOT a data type that JavaScript supports?",
             answers: {
-                a: "answer1",
-                b: "answer2",
-                c: "answer3",
-                d: "answer4"
+                a: "string",
+                b: "object",
+                c: "letter",
+                d: "boolean"
 
             },
-            correctAnswer: "answer2"
+            correctAnswer: "letter"
         },
         {
-            question: "something else about javascript? 1",
+            question: "In which HTML element do we put JavaScript?",
             answers: {
-                a: "answer1",
-                b: "answer2",
-                c: "answer3",
-                d: "answer4"
+                a: "<js>",
+                b: "<script>",
+                c: "<java>",
+                d: "<javascript>"
             },
-            correctAnswer: "answer3"
+            correctAnswer: "<script>"
         },
         {
-            question: "something else else about javascript? 2",
+            question: 'How do you link an external script called "example.js"?',
             answers: {
-                a: "answer1",
-                b: "answer2",
-                c: "answer3",
-                d: "answer4"
+                a: '<script name="example.js">',
+                b: '<script href="example.js">',
+                c: '<script link="example.js">',
+                d: '<script src="example.js">'
             },
-            correctAnswer: "answer1"
-        }
+            correctAnswer: '<script src="example.js">'
+        },
+        {
+            question: 'How do you write "Hello" in an alert box?',
+            answers: {
+                a: 'alert("Hello")',
+                b: 'alertBox("Hello")',
+                c: 'warn("Hello")',
+                d: 'text("Hello")'
+            },
+            correctAnswer: 'alert("Hello")'
+        },
+        {
+            question: "How do you create a function in JavaScript?",
+            answers: {
+                a: "function myName()",
+                b: "function = myName",
+                c: "function myName[]",
+                d: "myName = function"
+            },
+            correctAnswer: "function myName()"
+        },
+        {
+            question: "What is the length property of an array?",
+            answers: {
+                a: "The number of lines it takes up",
+                b: "The number of characters in it",
+                c: "The number of elements in it",
+                d: "The distance from start to finish"
+            },
+            correctAnswer: "The number of elements in it"
+        },
     ];
 function setNextQuestion() {
     showQuiz(currentQuestionIndex)
