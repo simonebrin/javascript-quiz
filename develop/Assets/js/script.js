@@ -27,12 +27,14 @@
 
 var myH1 = document.querySelector('#pageTitle')
 var myButton = document.getElementById('startQuiz')
+var scores = document.getElementById('scores')
 
 myButton.addEventListener('click', function() {
 
     var count = 10
     myH1.textContent = count
     startGame()
+    scores.classList.remove('hide')
     var myTimer = setInterval(function(){
         count--
         myH1.textContent = count
@@ -58,6 +60,7 @@ var q4 = document.getElementById('q4')
 function startGame() {
     console.log("start")
     currentQuestionIndex = 0
+    score = 0
     questionElement.classList.remove('hide')
     answerButtonsElement.classList.remove('hide')
     startTextElement.classList.add('hide')
@@ -126,7 +129,7 @@ function startGame() {
                 d: "The distance from start to finish"
             },
             correctAnswer: "The number of elements in it"
-        },
+        }
     ];
 function setNextQuestion() {
     showQuiz(currentQuestionIndex)
@@ -145,7 +148,11 @@ function showQuiz(i) {
         var element = event.target
         if (element.matches('.btn')){
             if (element.textContent === myQuestions[currentQuestionIndex].correctAnswer) {
-                console.log('great job')
+                score++
+                // var score = document.getElementsByClassName("score");
+                scores.innerText = score;
+                classToApply = 'correct'
+                console.log(score)
             }else{
                 console.log('wrong answer')
             }
@@ -153,10 +160,26 @@ function showQuiz(i) {
             showQuiz(currentQuestionIndex)
         }
     })
+
+    function showScore() {
+        score.classList.remove('hide')
+    }
+
 // If you are at the last question end the quiz, showing a game over screen taking them to highscore page
 // if it was wrong answer, decrease the time
 
-
+// answerButtonsElement.addEventListener('click', function(event) {
+//     var element = event.target
+//     if (element.matches('.btn')){
+//         if (element.textContent === myQuestions[currentQuestionIndex].correctAnswer) {
+//             console.log('great job')
+//         }else{
+//             console.log('wrong answer')
+//         }
+//         currentQuestionIndex++
+//         showQuiz(currentQuestionIndex)
+//     }
+// })
 
 
 //     var quizContainer = document.getElementById('quiz');
