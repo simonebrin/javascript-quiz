@@ -157,9 +157,23 @@ function showQuiz(i) {
                 console.log('wrong answer')
             }
             currentQuestionIndex++
-            showQuiz(currentQuestionIndex)
+            if (currentQuestionIndex < myQuestions.length) {
+                showQuiz(currentQuestionIndex);
+            }   else {
+                endQuiz();
+                }
+            }
+            // showQuiz(currentQuestionIndex)
         }
-    })
+    )
+
+    function endQuiz(){
+
+        var scores = document.getElementById('scores')
+        scores.textContent = "You scored " + score
+        questionElement.classList.add('hide')
+        answerButtonsElement.classList.add('hide')
+    }
 
     function showScore() {
         score.classList.remove('hide')
