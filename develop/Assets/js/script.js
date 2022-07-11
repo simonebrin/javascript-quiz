@@ -3,14 +3,14 @@
 var myH1 = document.querySelector('#pageTitle')
 var myButton = document.getElementById('startQuiz')
 var scores = document.getElementById('scores')
-
+var myTimer;
 myButton.addEventListener('click', function() {
 
     var count = 100
     myH1.textContent = count
     startGame()
     scores.classList.remove('hide')
-    var myTimer = setInterval(function(){
+    myTimer = setInterval(function(){
         count--
         myH1.textContent = count
         if (count === 0) {
@@ -139,7 +139,8 @@ function showQuiz(i) {
     )
 
     function endQuiz(){
-
+        console.log(myTimer)
+        clearInterval(myTimer)
         var scores = document.getElementById('scores')
         scores.textContent = "You scored " + score + "/5, congrats!"
         questionElement.classList.add('hide')
